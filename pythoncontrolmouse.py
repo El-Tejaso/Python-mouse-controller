@@ -14,6 +14,9 @@ def isKeyPressed(key):
     #"if the high-order bit is 1, the key is down; otherwise, it is up."
     return (win32api.GetKeyState(key) & (1 << 7)) != 0
 
+
+#Look up virtual keys here: https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes?redirectedfrom=MSDN
+
 LEFT_ARROW = ord('J')#0x25
 UP_ARROW = ord('I')#0x26
 RIGHT_ARROW = ord('L')#0x27
@@ -21,6 +24,7 @@ DOWN_ARROW = ord('K')#0x28
 SHIFT = 0xA0
 CTRL = 0xA2
 
+#allows mouse to go to corners of the screen without breaking program
 pyautogui.FAILSAFE = False
 
 def move(x, y):
